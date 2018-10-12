@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+
+  kanban:
+    image: kanboard/kanboard
+    container_name: kanban-dev
+    ports:
+      - 18080:80
+    env_file:
+      - ./env/.kanban
+    volumes:
+      - kanboard_data:/var/www/app/data
+      - ./plugins:/var/www/app/plugins
+
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+volumes:
+  kanboard_data:
+
+
