@@ -9,3 +9,8 @@ http://kanban.leanlabs.io/docs/installation/docker
 plugin-dir: install through 'user-menu' to the right -> Plugins
 http://localhost:18080/extensions/directory
 
+docker-compose down --remove-orphans
+
+see the env-file for the URL
+VIRTUAL_HOST=cgi-kanban.nrm.se
+update your /etc/host
