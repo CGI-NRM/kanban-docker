@@ -2,3 +2,10 @@ credentials : admin/admin
 
 config file
 https://docs.kanboard.org/en/latest/admin_guide/config_file.html
+
+another 'dist'
+http://kanban.leanlabs.io/docs/installation/docker
+
+plugin-dir: install through 'user-menu' to the right -> Plugins
+http://localhost:18080/extensions/directory
+
