@@ -11,6 +11,7 @@ services:
       - ./env/.kanban
     volumes:
       - kanboard_data:/var/www/app/data
+      - ./plugins:/var/www/app/plugins
 
 volumes:
   kanboard_data:
