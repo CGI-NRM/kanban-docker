@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+
+  kanban:
+    image: kanboard/kanboard
+    container_name: kanban
+    ports:
+      - 18080:80
+    env_file:
+      - ./env/.kanban
+    volumes:
+      - kanboard_data:/var/www/app/data
+
+volumes:
+  kanboard_data:
+
+
