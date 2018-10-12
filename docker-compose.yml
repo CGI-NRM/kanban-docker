@@ -1,7 +1,5 @@
 version: '3.3'
-
 services:
-
   kanban:
     image: kanboard/kanboard
     container_name: kanban
