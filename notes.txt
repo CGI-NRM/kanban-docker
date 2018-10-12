@@ -1,1 +1,4 @@
 credentials : admin/admin
+
+config file
+https://docs.kanboard.org/en/latest/admin_guide/config_file.html
