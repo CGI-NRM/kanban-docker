@@ -15,6 +15,9 @@ services:
 
   proxy:
     image: jwilder/nginx-proxy:alpine
+    container_name: proxy
+    environment:
+      - NGINX_MAX_BODY_SZ=100m
     ports:
       - "80:80"
       - "443:443"
