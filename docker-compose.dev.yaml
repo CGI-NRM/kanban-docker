@@ -12,19 +12,21 @@ services:
     volumes:
       - kanboard_data:/var/www/app/data
       - ./plugins:/var/www/app/plugins
-
+      - ./env/uploads.ini:/etc/php7/conf.d/uploads.ini
+    command: /usr/local/bin/entrypoint.sh
+    restart: always
   proxy:
     image: jwilder/nginx-proxy:alpine
     container_name: proxy
-    environment:
-      - NGINX_MAX_BODY_SZ=100m
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-
+      - ./env/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro
+    command: /app/docker-entrypoint.sh forego start -r
+    restart: always
 volumes:
   kanboard_data:
 
-
+  

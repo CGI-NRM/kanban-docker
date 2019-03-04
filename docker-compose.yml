@@ -10,8 +10,8 @@ services:
     volumes:
       - kanboard_data:/var/www/app/data
       - ./plugins:/var/www/app/plugins
+      - ./env/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
 volumes:
   kanboard_data:
-
 
